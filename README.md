@@ -1,4 +1,4 @@
-# Guide to Nvidia Isaac
+# Guide to Isaac
 
 ## Starting Isaac
 
