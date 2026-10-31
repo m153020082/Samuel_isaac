@@ -14,5 +14,5 @@ If there's child links, enable and select it from the tree at the bottom, after 
 in the Exporter, click joint and set the limits(important), then select child link(e.g. pivot) afterward, click Export URDF and Meshes.
 
 ## Import URDF into Isaac
-
+Click File->Import->Select URDF file
 
