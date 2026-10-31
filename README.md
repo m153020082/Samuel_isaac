@@ -1,6 +1,6 @@
-#Guide to Nvidia Isaac
+# Guide to Nvidia Isaac
 
-##Starting Isaac
+## Starting Isaac
 
 ```bash
 cd ~/isaacsim
