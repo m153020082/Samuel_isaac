@@ -3,6 +3,6 @@
 ## Starting Isaac
 
 ```bash
-cd ~/isaacsim
+cd C:\isaacsim
 ./isaac-sim.sh
 ```
