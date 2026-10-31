@@ -1,0 +1,77 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.3.2"
+    }
+    defaultPrim = "tn__Rod_assemblageSLDASM_oU"
+    endTimeCode = 1000000
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    startTimeCode = 0
+    upAxis = "Z"
+)
+
+over "tn__Rod_assemblageSLDASM_oU"
+{
+    over "Geometry"
+    {
+        over "base_link" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsArticulationRootAPI", "NewtonArticulationRootAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+        )
+        {
+            double[] newton:inertia = [0.00285587944393071, 0.0690366255333386, 0.0706813265117172, 0.00000341137117315922, -2.62968355937273e-18, -4.37328340960632e-20]
+            bool newton:selfCollisionEnabled = 0
+            point3f physics:centerOfMass = (-0.19820908, 0.20026599, 0.17180213)
+            float3 physics:diagonalInertia = (0.0028558793, 0.069036625, 0.070681326)
+            float physics:mass = 2.7125664
+            quatf physics:principalAxes = (1, 1.3335781e-17, -1.9385997e-17, -0.000025773139)
+
+            over "pivot" (
+                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+            )
+            {
+                double[] newton:inertia = [0.00065376, 0.0065079, 0.0070657, 0.0011544, -1.1713e-19, 1.1331e-20]
+                point3f physics:centerOfMass = (0.13324, -0.025324, -0.006)
+                float3 physics:diagonalInertia = (0.00043434335, 0.0067273164, 0.0070657)
+                float physics:mass = 0.73443
+                quatf physics:principalAxes = (0.99559325, -5.050842e-17, -4.757477e-18, -0.09377669)
+            }
+        }
+    }
+
+    over "Physics"
+    {
+        def PhysicsRevoluteJoint "joint" (
+            prepend apiSchemas = ["NewtonJointAPI", "PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+            float drive:angular:physics:maxForce = 10
+            float newton:velocityLimit = 114.59156
+            uniform token physics:axis = "Z"
+            custom rel physics:body0
+            append rel physics:body0 = </tn__Rod_assemblageSLDASM_oU/Geometry/base_link>
+            custom rel physics:body1
+            append rel physics:body1 = </tn__Rod_assemblageSLDASM_oU/Geometry/base_link/pivot>
+            point3f physics:localPos0 = (0.078282, -0.16684, 0.20221)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.7071081, 0.70710546, 0, 0)
+            quatf physics:localRot1 = (0, -1, 0, 0)
+            float physics:lowerLimit = 89.95438
+            float physics:upperLimit = 89.95438
+            custom float urdf:limit:effort = 10
+        }
+
+        def PhysicsFixedJoint "root_joint"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </tn__Rod_assemblageSLDASM_oU>
+            custom rel physics:body1
+            append rel physics:body1 = </tn__Rod_assemblageSLDASM_oU/Geometry/base_link>
+            point3f physics:localPos0 = (0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+    }
+}
+

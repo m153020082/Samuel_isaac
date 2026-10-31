@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Rod_assemblage.SLDASM">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.198209083852331 0.200265989397974 0.171802137420801"
+        rpy="0 0 0" />
+      <mass
+        value="2.71256637061436" />
+      <inertia
+        ixx="0.00285587944393071"
+        ixy="3.41137117315922E-06"
+        ixz="-2.62968355937273E-18"
+        iyy="0.0690366255333386"
+        iyz="-4.37328340960632E-20"
+        izz="0.0706813265117172" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Rod_assemblage.SLDASM/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Rod_assemblage.SLDASM/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="pivot">
+    <inertial>
+      <origin
+        xyz="0.13324 -0.025324 -0.006"
+        rpy="0 0 0" />
+      <mass
+        value="0.73443" />
+      <inertia
+        ixx="0.00065376"
+        ixy="0.0011544"
+        ixz="-1.1713E-19"
+        iyy="0.0065079"
+        iyz="1.1331E-20"
+        izz="0.0070657" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Rod_assemblage.SLDASM/meshes/pivot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Rod_assemblage.SLDASM/meshes/pivot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint"
+    type="revolute">
+    <origin
+      xyz="0.078282 -0.16684 0.20221"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="pivot" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="1.57"
+      upper="1.57"
+      effort="10"
+      velocity="2" />
+  </joint>
+</robot>
