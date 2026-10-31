@@ -6,7 +6,6 @@
 cd C:\isaacsim
 .\isaac-sim.bat
 ```
-Isaac will start in around 100 seconds
 
 ## Export URDF file from SolidWorks
 After creating the assembly, initiate the URDF exporter from Tools/Export as URDF, rename the base component and click the base coordinate(or leave it automatically), select the base component.
