@@ -4,5 +4,5 @@
 
 ```bash
 cd C:\isaacsim
-./isaac-sim.sh
+.\isaac-sim.bat
 ```
