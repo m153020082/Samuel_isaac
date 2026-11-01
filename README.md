@@ -1,4 +1,4 @@
-# Guide to Isaac
+# README
 
 ## Starting Isaac
 
