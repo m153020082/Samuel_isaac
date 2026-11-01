@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Foot_assembly">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.1 0.351301660575514 0.0592754192947775"
+        rpy="0 0 0" />
+      <mass
+        value="1.32792699081699" />
+      <inertia
+        ixx="0.124131988637656"
+        ixy="-5.14335745369825E-17"
+        ixz="-4.39571898567166E-19"
+        iyy="0.0117845188134715"
+        iyz="0.001774892248519"
+        izz="0.126527258577759" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Foot_assembly/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Foot_assembly/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link">
+    <inertial>
+      <origin
+        xyz="0 -0.290033056266843 -0.000244083216248858"
+        rpy="0 0 0" />
+      <mass
+        value="0.355287611019615" />
+      <inertia
+        ixx="0.0104224028504017"
+        ixy="9.09183754731222E-19"
+        ixz="-7.05290492875573E-22"
+        iyy="3.86244830032149E-05"
+        iyz="-8.75103074234823E-06"
+        izz="0.0104370715090515" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Foot_assembly/meshes/link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Foot_assembly/meshes/link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_joint"
+    type="revolute">
+    <origin
+      xyz="0.1 0.69 0.09"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="1.2"
+      upper="1.2"
+      effort="10"
+      velocity="2" />
+  </joint>
+  <link
+    name="feet">
+    <inertial>
+      <origin
+        xyz="2.4414E-10 -0.028894 -0.0037281"
+        rpy="0 0 0" />
+      <mass
+        value="0.23162" />
+      <inertia
+        ixx="0.00058896"
+        ixy="-1.5369E-12"
+        ixz="1.5063E-12"
+        iyy="0.0006074"
+        iyz="9.6789E-05"
+        izz="0.000143" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Foot_assembly/meshes/feet.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Foot_assembly/meshes/feet.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="feet_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.575 -0.0004839"
+      rpy="0 0 0" />
+    <parent
+      link="link" />
+    <child
+      link="feet" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="1.2"
+      upper="1.2"
+      effort="10"
+      velocity="2" />
+  </joint>
+</robot>
