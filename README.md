@@ -1,5 +1,3 @@
-# README
-
 ## Starting Isaac
 
 ```bash
