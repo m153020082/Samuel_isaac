@@ -1,5 +1,4 @@
 ## Starting Isaac
-
 ```bash
 cd C:\isaacsim
 .\isaac-sim.bat
