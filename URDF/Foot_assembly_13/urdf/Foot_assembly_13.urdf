@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Foot_assembly_13">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0999999999999999 0.35333645778917 0.0589830177287209"
+        rpy="0 0 0" />
+      <mass
+        value="1.33585398163398" />
+      <inertia
+        ixx="0.125078302425415"
+        ixy="-2.63926427153216E-17"
+        ixz="2.66105382519369E-18"
+        iyy="0.0118057335703589"
+        iyz="0.00190803749347008"
+        izz="0.127456146362206" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Foot_assembly_13/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Foot_assembly_13/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 -0.289966438608896 0.00622075434176975"
+        rpy="0 0 0" />
+      <mass
+        value="0.355287611019615" />
+      <inertia
+        ixx="0.0104224028504017"
+        ixy="-3.28093349627538E-20"
+        ixz="2.05867932271787E-22"
+        iyy="4.3400773894542E-05"
+        iyz="0.000222979316078503"
+        izz="0.0104322952181601" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Foot_assembly_13/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Foot_assembly_13/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link1"
+    type="revolute">
+    <origin
+      xyz="0.1 0.69 0.09"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="feet">
+    <inertial>
+      <origin
+        xyz="2.44140374583424E-10 -0.0291255484736501 -0.000673207166150602"
+        rpy="0 0 0" />
+      <mass
+        value="0.231623891688802" />
+      <inertia
+        ixx="0.000588958363265216"
+        ixy="-1.3702588968449E-12"
+        ixz="1.65937899226679E-12"
+        iyy="0.000622491232439877"
+        iyz="4.6154868685753E-05"
+        izz="0.000127907618182916" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Foot_assembly_13/meshes/feet.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Foot_assembly_13/meshes/feet.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="feet"
+    type="revolute">
+    <origin
+      xyz="0 -0.57487 0.012333"
+      rpy="0 0 0" />
+    <parent
+      link="link1" />
+    <child
+      link="feet" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 -0.0261185737784596 -0.0241493275140984"
+        rpy="0 0 0" />
+      <mass
+        value="0.0492146018366025" />
+      <inertia
+        ixx="3.48519357754889E-05"
+        ixy="-2.16349645329457E-22"
+        ixz="8.00292904834396E-22"
+        iyy="2.02350458453053E-05"
+        iyz="-1.5715897987446E-05"
+        izz="2.27015138451078E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Foot_assembly_13/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Foot_assembly_13/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link2"
+    type="revolute">
+    <origin
+      xyz="0.1 0.69 0.01"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link2" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link2.1">
+    <inertial>
+      <origin
+        xyz="1.16573417585641E-15 -0.2678465918722 0.0441093999355223"
+        rpy="0 0 0" />
+      <mass
+        value="0.321073009183013" />
+      <inertia
+        ixx="0.00770262684645028"
+        ixy="6.55805198520504E-20"
+        ixz="-7.86214550822142E-21"
+        iyy="0.000237347011101563"
+        iyz="0.00123152184139184"
+        izz="0.00751273835308674" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Foot_assembly_13/meshes/link2.1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Foot_assembly_13/meshes/link2.1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="revolving"
+    type="revolute">
+    <origin
+      xyz="0 -0.05874 -0.054311"
+      rpy="0 0 0" />
+    <parent
+      link="link2" />
+    <child
+      link="link2.1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

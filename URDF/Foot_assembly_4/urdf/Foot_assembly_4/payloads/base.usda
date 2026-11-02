@@ -1,0 +1,257 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.3.2"
+    }
+    defaultPrim = "Foot_assembly_4"
+    doc = """Generated from Composed Stage of root layer D:\\Samuel\\Samuel_isaac\\URDF\\Foot_assembly_4\\urdf\\Foot_assembly_4\\.asset-transformer-8vqhgmb4\\payloads\\base.usd
+"""
+    endTimeCode = 1000000
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    startTimeCode = 0
+    subLayers = [
+        @./robot.usda@
+    ]
+    upAxis = "Z"
+)
+
+def Xform "Foot_assembly_4" (
+    prepend apiSchemas = ["GeomModelAPI"]
+    assetInfo = {
+        string name = "Foot_assembly_4"
+    }
+    kind = "component"
+)
+{
+    float3[] extentsHint = [(0, 0, -0.05474997), (0.2, 0.72, 0.22023307), (3.4028235e38, 3.4028235e38, 3.4028235e38), (-3.4028235e38, -3.4028235e38, -3.4028235e38), (3.4028235e38, 3.4028235e38, 3.4028235e38), (-3.4028235e38, -3.4028235e38, -3.4028235e38), (0, 0, -0.05474997), (0.2, 0.72, 0.22023307)]
+
+    def Scope "Materials"
+    {
+        def Material "material_6" (
+            instanceable = true
+            prepend references = @./materials.usda@</Materials/material_6>
+        )
+        {
+        }
+    }
+
+    def Scope "Geometry"
+    {
+        def Xform "base_link"
+        {
+            def Xform "base_link" (
+                instanceable = true
+                prepend references = @./instances.usda@</Instances/base_link>
+            )
+            {
+                quatd xformOp:orient = (1, 0, 0, 0)
+                double3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+
+            def Xform "link_1"
+            {
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0.1, 0.69, 0.09)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Xform "link_1" (
+                    instanceable = true
+                    prepend references = @./instances.usda@</Instances/link_1>
+                )
+                {
+                    quatd xformOp:orient = (1, 0, 0, 0)
+                    double3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (0, 0, 0)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                }
+
+                def Xform "feet"
+                {
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (0, -0.57449, 0.024111)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Xform "feet" (
+                        instanceable = true
+                        prepend references = @./instances.usda@</Instances/feet>
+                    )
+                    {
+                        quatd xformOp:orient = (1, 0, 0, 0)
+                        double3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                    }
+
+                    def Xform "feet_1" (
+                        displayName = "feet"
+                        instanceable = true
+                        prepend references = @./instances.usda@</Instances/feet_1>
+                        uiHints = {
+                            string displayName = "feet"
+                        }
+                    )
+                    {
+                        quatd xformOp:orient = (1, 0, 0, 0)
+                        double3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                    }
+                }
+
+                def Xform "link_1_1" (
+                    displayName = "link_1"
+                    instanceable = true
+                    prepend references = @./instances.usda@</Instances/link_1_1>
+                    uiHints = {
+                        string displayName = "link_1"
+                    }
+                )
+                {
+                    quatd xformOp:orient = (1, 0, 0, 0)
+                    double3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (0, 0, 0)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                }
+            }
+
+            def Xform "link_2"
+            {
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0.1, 0.69, 0.01)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Xform "link_2" (
+                    instanceable = true
+                    prepend references = @./instances.usda@</Instances/link_2>
+                )
+                {
+                    quatd xformOp:orient = (1, 0, 0, 0)
+                    double3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (0, 0, 0)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                }
+
+                def Xform "tn__link_21_XB" (
+                    displayName = "link_2.1"
+                    uiHints = {
+                        string displayName = "link_2.1"
+                    }
+                )
+                {
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (0, -0.061901, -0.050678)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Xform "tn__link_21_XB" (
+                        displayName = "link_2.1"
+                        instanceable = true
+                        prepend references = @./instances.usda@</Instances/tn__link_21_XB>
+                        uiHints = {
+                            string displayName = "link_2.1"
+                        }
+                    )
+                    {
+                        quatd xformOp:orient = (1, 0, 0, 0)
+                        double3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                    }
+
+                    def Xform "feet_2"
+                    {
+                        quatf xformOp:orient = (1, 0, 0, 0)
+                        float3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0, -0.52444, 0.095126)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                        def Xform "feet_2" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding = </Foot_assembly_4/Materials/material_6>
+                            quatf xformOp:orient = (1, 0, 0, 0)
+                            float3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (0, 0, 0)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                        }
+
+                        def Xform "feet_2_1" (
+                            displayName = "feet_2"
+                            uiHints = {
+                                string displayName = "feet_2"
+                            }
+                        )
+                        {
+                            uniform token purpose = "guide"
+                            quatf xformOp:orient = (1, 0, 0, 0)
+                            float3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (0, 0, 0)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                        }
+                    }
+
+                    def Xform "tn__link_21_1_WE" (
+                        displayName = "link_2.1"
+                        instanceable = true
+                        prepend references = @./instances.usda@</Instances/tn__link_21_XB_1>
+                        uiHints = {
+                            string displayName = "link_2.1"
+                        }
+                    )
+                    {
+                        quatd xformOp:orient = (1, 0, 0, 0)
+                        double3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                    }
+                }
+
+                def Xform "link_2_1" (
+                    displayName = "link_2"
+                    instanceable = true
+                    prepend references = @./instances.usda@</Instances/link_2_1>
+                    uiHints = {
+                        string displayName = "link_2"
+                    }
+                )
+                {
+                    quatd xformOp:orient = (1, 0, 0, 0)
+                    double3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (0, 0, 0)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                }
+            }
+
+            def Xform "base_link_1" (
+                displayName = "base_link"
+                instanceable = true
+                prepend references = @./instances.usda@</Instances/base_link_1>
+                uiHints = {
+                    string displayName = "base_link"
+                }
+            )
+            {
+                quatd xformOp:orient = (1, 0, 0, 0)
+                double3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+        }
+    }
+
+    def Scope "Physics"
+    {
+    }
+
+    def Scope "VisualMaterials"
+    {
+    }
+}
+
