@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Isolated_foot2">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.074429622926767 0.0158722563219439 0.0299999997558599"
+        rpy="0 0 0" />
+      <mass
+        value="0.231623891688802" />
+      <inertia
+        ixx="0.000127587891035077"
+        ixy="4.44076330105105E-05"
+        ixz="-1.66420629659901E-12"
+        iyy="0.000622810959587715"
+        iyz="1.3643920152592E-12"
+        izz="0.000588958363265217" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Isolated_foot2/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Isolated_foot2/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="0.00595403367324815 0.284904633110252 2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.355287611019615" />
+      <inertia
+        ixx="0.010432539425972"
+        ixy="-0.000217215714398316"
+        ixz="-2.15455744367484E-21"
+        iyy="4.31565660826886E-05"
+        iyz="1.02609496929016E-19"
+        izz="0.0104224028504017" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Isolated_foot2/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Isolated_foot2/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="0.075 0.045 0.03"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.75"
+      upper="0.75"
+      effort="1"
+      velocity="0.2" />
+  </joint>
+</robot>

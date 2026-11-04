@@ -1,0 +1,76 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.3.2"
+    }
+    defaultPrim = "Isolated_foot"
+    endTimeCode = 1000000
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    startTimeCode = 0
+    upAxis = "Z"
+)
+
+over "Isolated_foot"
+{
+    over "Geometry"
+    {
+        over "base_link" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsArticulationRootAPI", "NewtonArticulationRootAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+        )
+        {
+            double[] newton:inertia = [0.000127587891035077, 0.000622810959587715, 0.000588958363265217, 0.0000444076330105105, -1.66420628561396e-12, 1.3643920242774e-12]
+            bool newton:selfCollisionEnabled = 0
+            point3f physics:centerOfMass = (0.074429624, 0.015872257, 0.03)
+            float3 physics:diagonalInertia = (0.00012363729, 0.0005889584, 0.0006267616)
+            float physics:mass = 0.23162389
+            quatf physics:principalAxes = (0.706411, 0.70641106, -0.03136005, -0.031360045)
+
+            over "link1" (
+                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+            )
+            {
+                double[] newton:inertia = [0.010433, 0.000043157, 0.010422, -0.00021722, -2.1546e-21, 1.0261e-19]
+                point3f physics:centerOfMass = (0.005954, 0.2849, 2.7756e-17)
+                float3 physics:diagonalInertia = (0.000038617574, 0.010422, 0.01043754)
+                float physics:mass = 0.35529
+                quatf physics:principalAxes = (0.50519633, 0.50519633, 0.4947491, 0.4947491)
+            }
+        }
+    }
+
+    over "Physics"
+    {
+        def PhysicsRevoluteJoint "joint1" (
+            prepend apiSchemas = ["NewtonJointAPI", "PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+            float newton:velocityLimit = 0
+            uniform token physics:axis = "Z"
+            custom rel physics:body0
+            append rel physics:body0 = </Isolated_foot/Geometry/base_link>
+            custom rel physics:body1
+            append rel physics:body1 = </Isolated_foot/Geometry/base_link/link1>
+            point3f physics:localPos0 = (0.075, 0.045, 0.03)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0, -1, 0, 0)
+            quatf physics:localRot1 = (0, -1, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 0
+            custom float urdf:limit:effort = 0
+        }
+
+        def PhysicsFixedJoint "root_joint"
+        {
+            custom rel physics:body0
+            append rel physics:body0 = </Isolated_foot>
+            custom rel physics:body1
+            append rel physics:body1 = </Isolated_foot/Geometry/base_link>
+            point3f physics:localPos0 = (0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+    }
+}
+
