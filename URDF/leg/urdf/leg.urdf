@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="leg">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.409295497961091 0.0553071955970446 0.290857912309363"
+        rpy="0 0 0" />
+      <mass
+        value="2.42688032489812" />
+      <inertia
+        ixx="0.0213227767342117"
+        ixy="0.000295654638940345"
+        ixz="4.24197031352009E-06"
+        iyy="0.00296173547989002"
+        iyz="-0.000263507387468114"
+        izz="0.021323755483929" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://leg/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://leg/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left">
+    <inertial>
+      <origin
+        xyz="-0.00253300560821224 -0.00213611540748987 0.00659702500259088"
+        rpy="0 0 0" />
+      <mass
+        value="0.805033117482385" />
+      <inertia
+        ixx="0.00155908570388046"
+        ixy="-4.54218332776465E-05"
+        ixz="0.000151548787372275"
+        iyy="0.00157454511405004"
+        iyz="0.000107345599194878"
+        izz="0.0019811990484016" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://leg/meshes/left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://leg/meshes/left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_joint"
+    type="revolute">
+    <origin
+      xyz="0.41211 -0.11965 0.28835"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left" />
+    <axis
+      xyz="0.016094 -0.014344 0.99977" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right">
+    <inertial>
+      <origin
+        xyz="-0.00253676231838368 -0.00219116478081993 -0.00657749794173643"
+        rpy="0 0 0" />
+      <mass
+        value="0.805033117482385" />
+      <inertia
+        ixx="0.00155892641750976"
+        ixy="-4.6656872742729E-05"
+        ixz="-0.000127754053621418"
+        iyy="0.00157255283465207"
+        iyz="-0.000131047993183773"
+        izz="0.00198335061417027" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://leg/meshes/right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://leg/meshes/right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_joint"
+    type="revolute">
+    <origin
+      xyz="0.40648 0.23027 0.29337"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right" />
+    <axis
+      xyz="0.016094 -0.014344 0.99977" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>
